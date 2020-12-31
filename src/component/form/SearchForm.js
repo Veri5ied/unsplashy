@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import Card from "../cards/Card";
 
-function SearchForm() {
-  const [query, setQuery] = useState("");
+function SearchForm({ fetchPictures }) {
   const [pictures, setPictures] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchPictures(e, pictures);
+    setPictures("");
+  };
 
   return (
     <div>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="query" className="label">
           {" "}
         </label>
@@ -15,15 +20,13 @@ function SearchForm() {
           type="text"
           name="query"
           className="input"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setPictures(e.target.value)}
           placeholder={`Search for Paris or Canada`}
         />
         <button type="submit" className="button">
           Search
         </button>
       </form>
-      <Card pictures={pictures} />
     </div>
   );
 }
