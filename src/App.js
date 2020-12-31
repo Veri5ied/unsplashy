@@ -1,12 +1,13 @@
 import "./App.css";
-import UnsplashContextProvider from "./contexts/UnsplashContext";
+import SearchForm from "./component/form/SearchForm";
 
 function App() {
   return (
     <div className="App">
-      <UnsplashContextProvider>
-        
-      </UnsplashContextProvider>
+      <div className="container">
+        <h1 className="title">Unsplashy Photo Search</h1>
+        <SearchForm />
+      </div>
     </div>
   );
 }
