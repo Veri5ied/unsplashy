@@ -5,7 +5,7 @@ import { initialState, reducer } from "../reducers/reducer";
 import axios from "axios";
 import Card from "../component/cards/Card";
 
-/* const url = `https://api.unsplash.com/search/photos?page=1&query=${searchValue}&client_id=${process.env.REACT_APP_UNSPLASH_ID}`; */
+
 const baseUrl = "https://api.unsplash.com/search/photos";
 function UnsplashContext() {
   const [state, dispatch] = useReducer(reducer, initialState);
