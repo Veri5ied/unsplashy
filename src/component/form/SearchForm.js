@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
+
 function SearchForm() {
   const [query, setQuery] = useState("");
+  const [pictures, setPictures] = useState([]);
+
+ 
   return (
     <div>
       <form className="form">
         <label htmlFor="query" className="label">
           {" "}
-          Search
         </label>
         <input
           type="text"
