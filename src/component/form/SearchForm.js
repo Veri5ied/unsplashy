@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function SearchForm() {
+  const [query, setQuery] = useState("");
   return (
     <div>
       <form className="form">
@@ -12,6 +13,8 @@ function SearchForm() {
           type="text"
           name="query"
           className="input"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
           placeholder={`Search for Paris or Canada`}
         />
         <button type="submit" className="button">
