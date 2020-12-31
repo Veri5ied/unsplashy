@@ -1,26 +1,24 @@
 import React, { useState } from "react";
-import Card from "../cards/Card";
 
-function SearchForm({ fetchPictures }) {
-  const [pictures, setPictures] = useState([]);
-
-  const handleSubmit = (e) => {
+function SearchForm({ search }) {
+  const [searchValue, setSearchValue] = useState("");
+  const handledSearch = (e) => {
     e.preventDefault();
-    fetchPictures(e, pictures);
-    setPictures("");
+    search(searchValue);
+    setSearchValue();
   };
 
   return (
     <div>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handledSearch}>
         <label htmlFor="query" className="label">
           {" "}
         </label>
         <input
           type="text"
-          name="query"
+          value={searchValue}
           className="input"
-          onChange={(e) => setPictures(e.target.value)}
+          onChange={(e) => setSearchValue(e.target.value)}
           placeholder={`Search for Paris or Canada`}
         />
         <button type="submit" className="button">
