@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-
+import Card from "../cards/Card";
 
 function SearchForm() {
   const [query, setQuery] = useState("");
   const [pictures, setPictures] = useState([]);
 
- 
   return (
     <div>
       <form className="form">
@@ -24,6 +23,7 @@ function SearchForm() {
           Search
         </button>
       </form>
+      <Card pictures={pictures} />
     </div>
   );
 }
