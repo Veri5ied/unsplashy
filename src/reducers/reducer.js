@@ -1,7 +1,7 @@
 export const initialState = {
   loading: false,
   pictures: [],
-  errorMessage: null,
+ // errorMessage: null,
 };
 
 export const reducer = (state, action) => {
